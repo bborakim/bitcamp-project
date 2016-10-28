@@ -19,6 +19,8 @@ public class EduApp06 {
         case "add": curriculumController.doAdd(); break;
         case "list": curriculumController.doList(); break;
         case "view": curriculumController.doView(); break;
+        case "delete": curriculumController.doDelete(); break;
+        case "update": curriculumController.doUpdate(); break;
         case "quit":
           System.out.println("Good Bye!");
           break loop;
@@ -27,4 +29,5 @@ public class EduApp06 {
       }
     }
   }
+
 }
