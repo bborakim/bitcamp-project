@@ -2,15 +2,29 @@ package bitcamp.java89.ems;
 
 import java.util.Scanner;
 
-public class EduApp {
+public class EduApp3 {
 
   public static void main(String[] args) {
+    System.out.println("비트캠프 관리시스템에 오신걸 환영합니다.");
     Scanner keyScan = new Scanner(System.in);
 
+    loop:
     while (true) {
       System.out.print("명령> ");
-      String command = keyScan.nextLine();
-      System.out.println(command);
+      String command = keyScan.nextLine().toLowerCase(); //소문자로 변환
+
+      switch (command) {
+        case "add" :
+        case "list" :
+        case "view" :
+          System.out.println(command);
+          break;
+        case "quit" :
+          System.out.print("Good Bye!\n");
+          break loop;
+        default:
+          System.out.println("지원하지 않는 명령어입니다.");
+      }
     }
   /*
     Curriculum[] curriculums = new Curriculum[100];

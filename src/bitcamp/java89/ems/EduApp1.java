@@ -2,7 +2,7 @@ package bitcamp.java89.ems;
 
 import java.util.Scanner;
 
-public class EduApp {
+public class EduApp1 {
 
   public static void main(String[] args) {
     Scanner keyScan = new Scanner(System.in);
@@ -10,7 +10,15 @@ public class EduApp {
     while (true) {
       System.out.print("명령> ");
       String command = keyScan.nextLine();
-      System.out.println(command);
+      switch (command) {
+        case "add" :
+        case "list" :
+        case "view" :
+        System.out.println(command);
+        break;
+        default:
+        System.out.println("지원하지 않는 명령어입니다.");
+      }
     }
   /*
     Curriculum[] curriculums = new Curriculum[100];
