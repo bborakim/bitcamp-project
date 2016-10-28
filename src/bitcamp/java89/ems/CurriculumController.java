@@ -1,4 +1,4 @@
-package step09.ex06;
+package bitcamp.java89.ems;
 
 import java.util.Scanner;
 
@@ -11,6 +11,26 @@ public class CurriculumController {
   // => 생성자에서 하는 일은 그 객체를 사용하기 전에 유효 상태로 만드는 것이다.
   public CurriculumController(Scanner keyScan) {
     this.keyScan = keyScan;
+  }
+
+  public void service() {
+    loop:
+    while (true) {
+      System.out.print("강좌관리> ");
+      String command = keyScan.nextLine().toLowerCase();
+
+      switch (command) {
+      case "add": this.doAdd(); break;
+      case "list": this.doList(); break;
+      case "view": this.doView(); break;
+      case "delete": this.doDelete(); break;
+      case "update": this.doUpdate(); break;
+      case "main":
+        break loop;
+      default:
+        System.out.println("지원하지 않는 명령어입니다.");
+      }
+    }
   }
 
   public void doList() {
@@ -29,7 +49,7 @@ public class CurriculumController {
     }
   }
   public void doUpdate() {
-    System.out.print("변경할 학생의 아이디는? ");
+    System.out.print("변경할 강좌는? ");
     String curriculumName = this.keyScan.nextLine().toLowerCase();
     for (int i = 0; i < this.length; i++) {
       if (this.curriculums[i].curriculumName.toLowerCase().equals(curriculumName)) {

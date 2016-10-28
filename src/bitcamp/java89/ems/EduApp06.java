@@ -1,4 +1,4 @@
-package step09.ex06;
+package bitcamp.java89.ems;
 
 import java.util.Scanner;
 
@@ -13,20 +13,22 @@ public class EduApp06 {
     loop:
     while (true) {
       System.out.print("명령> ");
-      String command = keyScan.nextLine().toLowerCase(); //소문자로 변환
+      String command = keyScan.nextLine().toLowerCase();
 
       switch (command) {
-        case "add": curriculumController.doAdd(); break;
-        case "list": curriculumController.doList(); break;
-        case "view": curriculumController.doView(); break;
-        case "delete": curriculumController.doDelete(); break;
-        case "update": curriculumController.doUpdate(); break;
-        case "quit":
-          System.out.println("Good Bye!");
-          break loop;
-        default:
-          System.out.println("지원하지 않는 명령어입니다.");
+      case "menu": doMenu(); break;
+      case "go 1": curriculumController.service(); break;
+      case "quit":
+        System.out.println("Good bye!");
+        break loop;
+      default:
+        System.out.println("지원하지 않는 명령어입니다.");
       }
     }
+  }
+  static void doMenu() {
+    System.out.println("[메뉴]");
+    System.out.println("1. 강좌관리");
+    System.out.println("메뉴 이동은 'go 메뉴번호'를 입력하세요.");
   }
 }
