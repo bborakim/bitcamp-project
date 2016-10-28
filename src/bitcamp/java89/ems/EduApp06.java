@@ -1,4 +1,4 @@
-package bitcamp.java89.ems;
+package step09.ex06;
 
 import java.util.Scanner;
 
@@ -29,5 +29,4 @@ public class EduApp06 {
       }
     }
   }
-
 }
