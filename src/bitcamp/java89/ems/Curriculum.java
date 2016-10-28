@@ -20,7 +20,5 @@ public class Curriculum {
     this.document = document;
     this.limit = limit;
     this.time = time;
-
-
   }
 }
